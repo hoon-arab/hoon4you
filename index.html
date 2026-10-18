@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>هوون - متجر العائلة العصرية | +201004414446</title>
+<meta name="description" content="هوون 5 متاجر عربية السعودية مصر الإمارات الكويت عمان شحن مجاني الدفع عند الاستلام واتساب +201004414446">
+<meta name="theme-color" content="#00c2a8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--p:#00c2a8;--bg:#f8fffe;--t:#0f172a;--m:#64748b;--b:#e2e8f0;--a:#ff3b30}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif}
+body{background:var(--bg);color:var(--t)}
+.app{max-width:480px;margin:0 auto;min-height:100vh;padding-bottom:90px;background:var(--bg);position:relative}
+.h{padding:16px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;font-size:22px;display:flex;gap:8px;align-items:center}.logo i{color:var(--p)}
+.cart{width:42px;height:42px;background:#f1f5f9;border-radius:12px;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer}
+.count{position:absolute;top:-4px;right:-4px;background:var(--a);color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
+.promo{margin:12px;background:linear-gradient(135deg,#00c2a8,#00e5cc);border-radius:20px;padding:16px;color:#fff;display:flex;gap:12px;align-items:center}
+.promo h3{font-size:14px;font-weight:800}.promo p{font-size:11px;opacity:.9}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:0 16px 8px;scrollbar-width:none}.tab{min-width:85px;padding:10px;background:#fff;border:2px solid var(--b);border-radius:14px;text-align:center;cursor:pointer;flex-shrink:0;font-size:12px;font-weight:700}.tab.active{border-color:var(--p);background:var(--p);color:#fff}
+.search{margin:12px 16px;background:#fff;border:1.5px solid var(--b);border-radius:14px;padding:10px 14px;display:flex;gap:10px;align-items:center}.search input{border:none;outline:none;width:100%;font-size:13px;background:transparent}
+.grid{padding:0 16px;display:grid;gap:12px}
+.card{background:#fff;border-radius:18px;padding:14px;border:1px solid var(--b);display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--t);cursor:pointer;transition:all .2s}.card:hover{border-color:var(--p);background:#f0fdfa}.card.hide{display:none}
+.icon{width:56px;height:56px;border-radius:14px;background:#ccfbf1;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;color:var(--p)}
+.info{flex:1;min-width:0}.info h4{font-size:14px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tag{font-size:11px;color:var(--m)}.meta{font-size:10px;color:var(--p);font-weight:700;margin-top:4px}
+.arrow{width:36px;height:36px;background:var(--t);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.drawer{position:fixed;bottom:0;left:50%;transform:translateX(-50%) translateY(100%);width:100%;max-width:480px;background:#fff;border-radius:28px 28px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.15);padding:20px;z-index:99;max-height:85vh;overflow-y:auto;transition:transform .35s ease}.drawer.show{transform:translateX(-50%) translateY(0)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:98;display:none}
+.overlay.show{display:block}
+.input{width:100%;padding:12px 14px;border:1.5px solid var(--b);border-radius:12px;margin-top:8px;font-size:13px;outline:none}.input:focus{border-color:var(--p)}
+.btn{width:100%;background:var(--p);color:#fff;border:none;border-radius:14px;padding:14px;font-weight:800;font-size:14px;margin-top:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#fff;border-top:1px solid var(--b);display:flex;justify-content:space-around;padding:10px;z-index:10}
+.nav-item{display:flex;flex-direction:column;align-items:center;font-size:10px;color:var(--m);cursor:pointer;gap:4px;text-decoration:none}.nav-item.active{color:var(--p)}.nav-item i{font-size:18px}
+</style>
+</head>
+<body>
+
+<div class="app">
+    <!-- الهيدر -->
+    <div class="h">
+        <div class="logo">
+            <i class="fa-solid fa-store"></i> هوون
+        </div>
+        <div class="cart" id="cartBtn">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div class="count" id="cartCount">0</div>
+        </div>
+    </div>
+
+    <!-- بنر ترويجي -->
+    <div class="promo">
+        <i class="fa-solid fa-truck-fast fa-2x"></i>
+        <div>
+            <h3>شحن مجاني ودفع عند الاستلام</h3>
+<p>متوفر في السعودية، مصر، الإمارات، الكويت وعمان</p>
+        </div>
+    </div>
+
+    <!-- التصنيفات (Tabs) -->
+    <div class="tabs">
+        <div class="tab active" data-filter="all">الكل</div>
+        <div class="tab" data-filter="saudi">السعودية</div>
+        <div class="tab" data-filter="egypt">مصر</div>
+        <div class="tab" data-filter="uae">الإمارات</div>
+        <div class="tab" data-filter="kuwait">الكويت</div>
+        <div class="tab" data-filter="oman">عمان</div>
+    </div>
+
+    <!-- شبحث -->
+    <div class="search">
+        <i class="fa-solid fa-magnifying-glass" style="color:var(--m)"></i>
+        <input type="text" id="searchInput" placeholder="ابحث عن منتجات أو متاجر...">
+    </div>
+
+    <!-- شبكة المنتجات/المتاجر -->
+    <div class="grid" id="productsGrid">
+        <div class="card" data-category="saudi" data-name="متجر الرياض الحديث">
+            <div class="icon"><i class="fa-solid fa-bag-shopping"></i></div>
+            <div class="info">
+                <h4>متجر الرياض الحديث</h4>
+                <div class="tag">السعودية - أزياء وعطور</div>
+                <div class="meta">شحن سريع مجاني</div>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-chevron-left"></i></div>
+        </div>
+
+        <div class="card" data-category="egypt" data-name="مصر العصرية للاكترونيات">
+            <div class="icon"><i class="fa-solid fa-laptop"></i></div>
+            <div class="info">
+                <h4>مصر العصرية للإلكترونيات</h4>
+                <div class="tag">مصر - إلكترونيات وإكسسوارات</div>
+                <div class="meta">دفع عند الاستلام</div>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-chevron-left"></i></div>
+        </div>
+
+        <div class="card" data-category="uae" data-name="دبي مول الإلكتروني">
+            <div class="icon"><i class="fa-solid fa-gem"></i></div>
+            <div class="info">
+                <h4>دبي مول الإلكتروني</h4>
+                <div class="tag">الإمارات - ساعات ومجوهرات</div>
+                <div class="meta">ضمان لمدة عام</div>
+            </div>
+            <div class="arrow"><i class="fa-solid fa-chevron-left"></i></div>
+        </div>
+    </div>
+
+    <!-- القائمة السفلية (Navigation) -->
+    <div class="nav">
+        <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i>الرئيسية</a>
+        <a href="https://wa.me/201004414446" target="_blank" class="nav-item"><i class="fa-brands fa-whatsapp"></i>واتساب</a>
+        <a href="#" class="nav-item" id="cartNavBtn"><i class="fa-solid fa-bag-shopping"></i>السلة</a>
+    </div>
+
+    <!-- درج سلة التسوق (Drawer) -->
+    <div class="overlay" id="overlay"></div>
+    <div class="drawer" id="cartDrawer">
+        <h3 style="margin-bottom: 12px; font-weight: 800;">سلة التسوق</h3>
+        <div id="cartItemsList" style="color: var(--m); font-size: 13px; margin-bottom: 16px;">
+            السلة فارغة حالياً.
+        </div>
+        <button class="btn" onclick="checkoutWhatsapp()">
+            <i class="fa-brands fa-whatsapp"></i> اطلب عبر واتساب
+        </button>
+    </div>
+</div>
+
+<script>
+    // تفعيل الفلاتر والتصنيفات
+    const tabs = document.querySelectorAll('.tab');
+    const cards = document.querySelectorAll('.card');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const filter = tab.getAttribute('data-filter');
+
+            cards.forEach(card => {
+                if(filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.classList.remove('hide');
+                } else {
+                    card.classList.add('hide');
+                }
+            });
+        });
+    });
+
+    // شريط البحث المباشر
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+        const val = e.target.value.toLowerCase();
+        cards.forEach(card => {
+            const name = card.getAttribute('data-name').toLowerCase();
+            if(name.includes(val)) {
+                card.classList.remove('hide');
+            } else {
+                card.classList.add('hide');
+            }
+        });
+    });
+
+    // إدارة درج السلة (Drawer)
+    const cartBtn = document.getElementById('cartBtn');
+    const cartNavBtn = document.getElementById('cartNavBtn');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const overlay = document.getElementById('overlay');
+    const cartCount = document.getElementById('cartCount');
+    const cartItemsList = document.getElementById('cartItemsList');
+
+    let cart = [];
+
+    function toggleCart() {
+        cartDrawer.classList.toggle('show');
+        overlay.classList.toggle('show');
+    }
+
+    cartBtn.addEventListener('click', toggleCart);
+    cartNavBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleCart();
+    });
+    overlay.addEventListener('click', toggleCart);
+
+    // إضافة منتج عند النقر على البطاقة كمثال تفاعلي
+    cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            const itemName = card.getAttribute('data-name');
+            cart.push(itemName);
+            updateCartUI();
+            alert(`تمت إضافة "${itemName}" إلى السلة بنجاح!`);
+        });
+    });
+
+    function updateCartUI() {
+        cartCount.textContent = cart.length;
+        if(cart.length > 0) {
+            cartItemsList.innerHTML = cart.map((item, index) => `<div style="padding:6px 0; border-bottom:1px solid var(--b); display:flex; justify-content:space-between;"><span>${index+1}. ${item}</span></div>`).join('');
+        } else {
+            cartItemsList.innerHTML = 'السلة فارغة حالياً.';
+        }
+    }
+
+    function checkoutWhatsapp() {
+        if(cart.length === 0) {
+            alert('السلة فارغة!');
+            return;
+        }
+        const text = encodeURIComponent(`مرحباً، أود طلب المنتجات التالية:\n- ${cart.join('\n- ')}`);
+        window.open(`https://wa.me/201004414446?text=${text}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
